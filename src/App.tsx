@@ -42,34 +42,30 @@ export default function App() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-300 font-sans selection:bg-lime-500/30 overflow-x-hidden">
       
-      {/* 4-Column Contact Top Bar (Carisma Style) */}
-      <div className="bg-zinc-950 border-b border-zinc-900/50 py-2.5 hidden lg:block relative z-50">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-4 gap-4 text-xs font-sans text-zinc-400 font-medium tracking-wide">
-          <div className="flex items-center gap-2.5 hover:text-white transition-colors cursor-pointer"><MapPin className="w-3.5 h-3.5 text-lime-500"/> 12124 Bd Industriel, Pointe-aux-Trembles</div>
-          <div className="flex items-center gap-2.5 justify-center hover:text-white transition-colors cursor-pointer"><Phone className="w-3.5 h-3.5 text-lime-500"/> 438-699-0068</div>
-          <div className="flex items-center gap-2.5 justify-center hover:text-white transition-colors cursor-pointer"><Mail className="w-3.5 h-3.5 text-lime-500"/> info@gmfauto.ca</div>
-          <div className="flex items-center gap-2.5 justify-end"><Clock className="w-3.5 h-3.5 text-lime-500"/> Lun-Sam: 09:00 - 18:00</div>
-        </div>
-      </div>
-
-      {/* Floating Navigation */}
-      <nav className={`w-full z-40 transition-all duration-500 ${isScrolled ? 'fixed top-0 bg-zinc-950/80 backdrop-blur-xl border-b border-white/5 py-4 shadow-2xl' : 'absolute top-10 lg:top-[42px] bg-transparent py-6'}`}>
+      {/* Top Navigation */}
+      <nav className={`w-full z-50 transition-all duration-500 ${isScrolled ? 'fixed top-0 bg-zinc-950/95 backdrop-blur-xl py-4 shadow-2xl' : 'absolute top-0 bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-lime-500 rounded flex items-center justify-center border border-lime-400 shadow-[0_0_15px_rgba(132,204,22,0.3)]">
-              <Wrench className="w-5 h-5 md:w-6 md:h-6 text-zinc-950" />
+            <div className="w-10 h-10 bg-lime-500 rounded flex items-center justify-center">
+              <Wrench className="w-6 h-6 text-zinc-950 drop-shadow-sm" />
             </div>
-            <span className="font-display font-black text-xl md:text-2xl text-white tracking-widest uppercase">GMF AUTO</span>
+            <span className="font-display font-black text-xl text-white tracking-widest uppercase">GMF AUTO</span>
           </div>
           
-          <div className="hidden md:flex items-center gap-10">
-            <a href="#services" className="text-sm font-semibold hover:text-lime-400 transition-colors uppercase tracking-widest text-white/90">Services</a>
-            <a href="#propos" className="text-sm font-semibold hover:text-lime-400 transition-colors uppercase tracking-widest text-white/90">À Propos</a>
-            <a href="#contact" className="text-sm font-semibold hover:text-lime-400 transition-colors uppercase tracking-widest text-white/90">Contact</a>
-            
-            <a href="#contact" className="bg-white hover:bg-lime-500 text-zinc-950 px-6 py-2.5 font-bold uppercase tracking-widest transition-all duration-300 text-xs">
-              Réserver
+          <div className="hidden lg:flex items-center gap-10">
+            <a href="#home" className="text-sm font-bold text-white hover:text-lime-500 transition-colors uppercase tracking-widest text-[11px]">Home</a>
+            <a href="#services" className="text-sm font-bold text-white hover:text-lime-500 transition-colors uppercase tracking-widest text-[11px]">Services</a>
+            <a href="#propos" className="text-sm font-bold text-white hover:text-lime-500 transition-colors uppercase tracking-widest text-[11px]">About</a>
+            <a href="#contact" className="text-sm font-bold text-white hover:text-lime-500 transition-colors uppercase tracking-widest text-[11px]">Pricing</a>
+          </div>
+
+          <div className="hidden md:flex items-center gap-4">
+            <a href="#contact" className="bg-lime-500 hover:bg-lime-400 text-zinc-950 px-8 py-3 rounded-full font-black uppercase tracking-widest transition-all duration-300 text-[11px]">
+              Contact
             </a>
+            <div className="w-10 h-10 bg-lime-500 rounded-full flex items-center justify-center cursor-pointer hover:bg-lime-400 transition-all duration-300">
+              <Wrench className="w-4 h-4 text-zinc-950" />
+            </div>
           </div>
 
           <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -80,8 +76,8 @@ export default function App() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-30 bg-zinc-950/95 backdrop-blur-md pt-32 px-6 md:hidden">
-          <div className="flex flex-col gap-8 text-2xl font-display font-bold uppercase tracking-widest">
+        <div className="fixed inset-0 z-40 bg-zinc-950/95 backdrop-blur-md pt-32 px-6 md:hidden text-center">
+          <div className="flex flex-col gap-8 text-2xl font-display font-black uppercase tracking-widest">
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="hover:text-lime-500 transition-colors text-white">Services</a>
             <a href="#propos" onClick={() => setMobileMenuOpen(false)} className="hover:text-lime-500 transition-colors text-white">À Propos</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-lime-500 transition-colors text-white">Contact</a>
@@ -89,13 +85,11 @@ export default function App() {
         </div>
       )}
 
-      {/* Carisma-Style Hero Section */}
-      <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-end pt-32 pb-16 md:pb-24 overflow-hidden border-b border-white/5">
+      {/* Hero Section */}
+      <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          {/* Extremely dark overlay for maximum contrast and luxury feel */}
-          <div className="absolute inset-0 bg-zinc-950/70 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/60 to-transparent z-10" />
+          <div className="absolute inset-0 bg-zinc-950/60 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent z-10" />
           <motion.img 
             initial={{ scale: 1.05 }}
             animate={{ scale: 1 }}
@@ -107,35 +101,38 @@ export default function App() {
           />
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 relative z-20 w-full mt-auto">
+        <div className="max-w-6xl mx-auto px-6 relative z-20 w-full flex flex-col items-center text-center mt-6">
+          
+          {/* Centered Contact Info Row */}
+          <div className="hidden lg:flex items-center justify-center gap-10 text-[10px] font-sans text-white/90 font-bold tracking-[0.15em] uppercase mb-16">
+            <div className="flex items-center gap-2.5"><MapPin className="w-3.5 h-3.5 text-lime-500"/> 12124 Bd Industriel, QC</div>
+            <div className="flex items-center gap-2.5"><Phone className="w-3.5 h-3.5 text-lime-500"/> +1 438-699-0068</div>
+            <div className="flex items-center gap-2.5"><Mail className="w-3.5 h-3.5 text-lime-500"/> info@gmfauto.ca</div>
+            <div className="flex items-center gap-2.5"><Clock className="w-3.5 h-3.5 text-lime-500"/> Lun-Sam: 09:00 - 18:00</div>
+          </div>
+
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl"
+            className="flex flex-col items-center"
           >
             {/* Caption */}
-            <div className="flex items-center gap-3 text-lime-500 font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-6">
-              <span className="w-8 h-[2px] bg-lime-500"></span>
-              GARAGE MÉCANIQUE • POINTE-AUX-TREMBLES
+            <div className="text-lime-500 font-black tracking-[0.2em] uppercase text-xs mb-5">
+              MÉCANIQUE DEPUIS 2020
             </div>
             
             {/* Main Heading */}
-            <h1 className="font-display font-black text-5xl md:text-7xl lg:text-[5.5rem] tracking-tight uppercase text-white leading-[1.05] mb-8 drop-shadow-2xl">
-              L'expertise <br/>
-              <span className="text-lime-500">automobile</span><br/>
-              sans compromis.
+            <h1 className="font-display font-black text-5xl md:text-6xl lg:text-[4.5rem] tracking-tight text-white leading-[1.1] mb-12 max-w-4xl capitalize drop-shadow-lg">
+              Nous avons <span className="text-lime-500">maîtrisé</span> l'art de<br/>la mécanique
             </h1>
             
-            {/* Short Divider Line */}
-            <div className="w-16 h-1.5 bg-lime-500 mb-10"></div>
-            
-            {/* Side-by-side CTA */}
-            <div className="flex flex-col sm:flex-row gap-5 mb-16 md:mb-24">
-              <a href="#services" className="bg-lime-500 text-zinc-950 px-8 py-4.5 text-center font-bold uppercase tracking-widest hover:bg-white hover:text-zinc-950 transition-all duration-300 flex items-center justify-center gap-3 text-sm">
-                Explorer Services <ArrowUpRight className="w-4 h-4" />
+            {/* Side-by-side CTA (Pill shaped) */}
+            <div className="flex gap-4 mb-20">
+              <a href="#services" className="bg-lime-500 text-zinc-950 px-10 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-lime-400 transition-all duration-300">
+                Explorer Services
               </a>
-              <a href="#contact" className="border border-white/20 bg-black/20 backdrop-blur-sm text-white px-8 py-4.5 text-center font-bold uppercase tracking-widest hover:bg-white hover:text-zinc-950 transition-all duration-300 text-sm">
+              <a href="#contact" className="border border-white text-white px-10 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-zinc-950 transition-all duration-300">
                 Prendre Rendez-vous
               </a>
             </div>
@@ -146,14 +143,14 @@ export default function App() {
              initial={{ opacity: 0 }}
              animate={{ opacity: 1 }}
              transition={{ duration: 1, delay: 0.8 }}
-             className="border-t border-white/10 pt-8 hidden lg:grid grid-cols-6 gap-4 text-xs font-bold uppercase tracking-widest text-zinc-500"
+             className="w-full max-w-5xl border-t border-white/20 pt-8 mt-4 hidden lg:flex justify-between items-center text-[10px] font-black uppercase tracking-[0.15em] text-white/50"
           >
-            <a href="#services" className="hover:text-lime-500 transition-colors">Diag Électrique</a>
-            <a href="#services" className="hover:text-lime-500 transition-colors">Freins & Susp</a>
-            <a href="#services" className="hover:text-lime-500 transition-colors">Moteur & Trans</a>
-            <a href="#services" className="hover:text-lime-500 transition-colors">Pneus & Align</a>
-            <a href="#services" className="hover:text-lime-500 transition-colors">Vente & Loc</a>
-            <a href="#services" className="hover:text-lime-500 transition-colors">Méc. Domicile</a>
+            <a href="#services" className="hover:text-lime-500 hover:drop-shadow-[0_0_8px_rgba(132,204,22,0.5)] transition-all">Diag Électrique</a>
+            <a href="#services" className="hover:text-lime-500 hover:drop-shadow-[0_0_8px_rgba(132,204,22,0.5)] transition-all">Freins & Susp</a>
+            <a href="#services" className="hover:text-lime-500 hover:drop-shadow-[0_0_8px_rgba(132,204,22,0.5)] transition-all">Moteur & Trans</a>
+            <a href="#services" className="hover:text-lime-500 hover:drop-shadow-[0_0_8px_rgba(132,204,22,0.5)] transition-all">Pneus & Align</a>
+            <a href="#services" className="hover:text-lime-500 hover:drop-shadow-[0_0_8px_rgba(132,204,22,0.5)] transition-all">Vente & Loc</a>
+            <a href="#services" className="hover:text-lime-500 hover:drop-shadow-[0_0_8px_rgba(132,204,22,0.5)] transition-all">Méc. Domicile</a>
           </motion.div>
         </div>
       </section>

@@ -45,11 +45,8 @@ export default function App() {
       {/* Top Navigation */}
       <nav className={`w-full z-50 transition-all duration-500 ${isScrolled ? 'fixed top-0 bg-zinc-950/95 backdrop-blur-xl py-4 shadow-2xl' : 'absolute top-0 bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-lime-500 rounded flex items-center justify-center">
-              <Wrench className="w-6 h-6 text-zinc-950 drop-shadow-sm" />
-            </div>
-            <span className="font-display font-black text-xl text-white tracking-widest uppercase">GMF AUTO</span>
+          <div className="flex items-center">
+            <img src="/logo.jpg" alt="GMF Auto Logo" className="h-14 md:h-16 w-auto mix-blend-screen drop-shadow-[0_0_10px_rgba(132,204,22,0.5)]" />
           </div>
           
           <div className="hidden lg:flex items-center gap-10">
@@ -123,8 +120,10 @@ export default function App() {
             </div>
             
             {/* Main Heading */}
-            <h1 className="font-display font-black text-5xl md:text-6xl lg:text-[4.5rem] tracking-tight text-white leading-[1.1] mb-12 max-w-4xl capitalize drop-shadow-lg">
-              Nous avons <span className="text-lime-500">maîtrisé</span> l'art de<br/>la mécanique
+            <h1 className="font-display font-black text-5xl md:text-6xl lg:text-[4.5rem] tracking-tight text-white leading-[1.1] mb-12 max-w-4xl uppercase drop-shadow-lg">
+              Nous avons <span className="text-lime-500">maîtrisé</span><br/>
+              l'art de<br/>
+              la mécanique
             </h1>
             
             {/* Side-by-side CTA (Pill shaped) */}
@@ -269,11 +268,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
             <div className="lg:col-span-2">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-lime-500 rounded flex items-center justify-center transform -rotate-12 hover:rotate-0 transition-transform">
-                  <Wrench className="w-6 h-6 text-zinc-950" />
-                </div>
-                <span className="font-display font-black text-2xl text-white tracking-widest uppercase">GMF AUTO</span>
+              <div className="flex items-center mb-8">
+                <img src="/logo.jpg" alt="GMF Auto Logo" className="h-16 w-auto mix-blend-screen drop-shadow-[0_0_10px_rgba(132,204,22,0.3)]" />
               </div>
               <p className="text-zinc-400 mb-8 max-w-md text-sm leading-relaxed border-l-2 border-lime-500 pl-4">
                 Réseau des professionnels de l'automobile et de la mécanique du Québec. L'expertise sans compromis à Pointe-aux-Trembles.
